@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>小薯茄時間軸</title>
+	<link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+	<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+</head>
+<body>
+
+<div id="timeline-embed" style="width: 100%;"></div>
+
+<style>
+html, body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+</style>
+
+<script type="text/javascript">
+var embed = document.getElementById('timeline-embed');
+embed.style.height = getComputedStyle(document.body).height;
+
+var options = {
+	hash_bookmark: true,
+	language: "assets/TimelineJS3/language/zh-hk.json"
+};
+var timeline = new TL.Timeline("timeline-embed", "https://docs.google.com/spreadsheets/d/e/2PACX-1vRwu2is3rkiEqY184w6_3myrZmum8WtLAnaeEh4ANsOaH_0jw9Lo4IB4X7FOaZxyWWkbI5hc4Iq_ybU/pubhtml?gid=0&single=true", options);
+
+window.addEventListener('resize', function() {
+	var embed = document.getElementById('timeline-embed');
+	embed.style.height = getComputedStyle(document.body).height;
+	timeline.updateDisplay();
+});
+</script>
+
+</body>
+</html>
